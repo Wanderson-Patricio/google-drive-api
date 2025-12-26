@@ -2,11 +2,13 @@ from fastapi import FastAPI, APIRouter
 import uvicorn
 from typing import Any, Dict, List
 from dotenv import load_dotenv
+import logging
 
 load_dotenv()
 
 import src.routers as routers
 from src.hello import hello_message
+from src.utils import Logger
 
 tags_metadata = [
     {
@@ -30,6 +32,8 @@ for rout in routers_to_include:
 
 @app.get('/')
 def hello() -> Dict[str, Any]:
+    logger = Logger(app_name="app", level=logging.DEBUG)
+    logger.debug("Hello endpoint was called.")
     return hello_message
 
 def main() -> None:

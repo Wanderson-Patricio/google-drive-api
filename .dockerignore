@@ -1,0 +1,27 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Ambientes virtuais
+.venv/
+venv/
+env/
+ENV/
+
+# Logs e bancos de dados locais
+*.log
+*.sqlite3
+
+# Git e Docker
+.git
+.gitignore
+Dockerfile
+.dockerignore
+
+# Variáveis de ambiente
+.env
+
+# IDEs
+.vscode/
+.idea/
