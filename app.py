@@ -1,11 +1,12 @@
 from fastapi import FastAPI, APIRouter
 import uvicorn
-from typing import Dict, List
+from typing import Any, Dict, List
 from dotenv import load_dotenv
 
 load_dotenv()
 
 import src.routers as routers
+from src.hello import hello_message
 
 tags_metadata = [
     {
@@ -28,8 +29,8 @@ for rout in routers_to_include:
     app.include_router(rout)
 
 @app.get('/')
-def hello() ->  Dict[str, str]:
-    return {'message': 'Hello, World!'}
+def hello() -> Dict[str, Any]:
+    return hello_message
 
 def main() -> None:
     host: str = "0.0.0.0"

@@ -1,5 +1,5 @@
 node_modules/
 *env*
 credentials.json
-teste.json
+teste.py
 *__pycache__

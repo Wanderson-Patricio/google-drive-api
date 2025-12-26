@@ -45,7 +45,6 @@ class InternalServerErrorException(HTTPException):
             }
         )
 
-
 def handle_exception(e: Exception) -> HTTPException:
     if isinstance(e, HTTPException):
         return e
